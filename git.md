@@ -78,13 +78,31 @@ git commit –amend # amends staged changes to previous commit - BE CAREFUL SINC
 ## Branches ##
 
 ```
-git branch # list existing branches
-git branch <name> # create new branch, does not switch to it
-git branch -d <name> # (soft) delete branch
-git branch -D <name> # (hard) delete branch - force delete branch with unmerged commits
-git checkout <branch> # working directory & HEAD updated to match the branch/commit
-git checkout 396f44 . # checkout old revision by commit SHA (works with first 6 digits!)
+# list existing (local) branches
+git branch
+
+# list existing (local and remote) branches
+git branch -a
+
+# create new branch, does not switch to it
+git branch <name>
+
+# (soft) delete branch
+git branch -d <name>
+
+# (hard) delete branch - force delete branch with unmerged commits
+git branch -D <name>
+
+# delete remote branch
+git push origin --delete <name>
+
+# working directory & HEAD updated to match the branch/commit
+git checkout <branch>
+
+# checkout old revision by commit SHA (works with first 6 digits!)
 # warning: checkout can overwrite uncommited changes - best to have a clean working directory
+git checkout 396f44 .
+
 # create branch and switch to it - works when forking from a detached HEAD as well:
 git checkout -b <new-branch-name>
 ```
