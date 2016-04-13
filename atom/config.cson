@@ -1,0 +1,17 @@
+"*":
+  core:
+    themes: [
+      "nucleus-dark-ui"
+      "chester-atom-syntax"
+    ]
+  editor:
+    fontSize: 13
+    invisibles: {}
+    softWrap: true
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+  jshint:
+    supportLintingJsx: true
+  welcome:
+    showOnStartup: false
