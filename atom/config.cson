@@ -1,5 +1,6 @@
 "*":
   core:
+    excludeVcsIgnoredPaths: false
     themes: [
       "nucleus-dark-ui"
       "chester-atom-syntax"
