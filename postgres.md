@@ -1,0 +1,55 @@
+# postgres
+
+## snippets
+
+```
+SELECT * FROM "User" ORDER BY "User".id DESC
+
+DELETE FROM "User" WHERE "User"."username"='nikola@tesla.com'
+
+SELECT
+	row_number() OVER (ORDER BY "User"."id") AS "#",
+	"User"."username",
+	COUNT("Installation"."deviceToken") AS "tokens"
+FROM "User"
+	LEFT JOIN "Installation" ON "User".id = "Installation"."userId"
+	GROUP BY "User"."id"
+```
+
+
+## osx Installation
+
+```
+brew update
+brew install redis
+brew install postgres
+mkdir -p ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+createdb orange
+
+psql postgres -c 'CREATE EXTENSION "adminpack";')
+
+## psql --dbname=orange
+## psql --dbname=postgres
+## CREATE ROLE orange WITH LOGIN ENCRYPTED PASSWORD 'correcthorsebatterystaple' CREATEDB;
+## \q
+```
+
+## query optimization
+(source: https://wiki.postgresql.org/wiki/FAQ)
+
+* Creation of indexes, including expression and partial indexes
+* Use of COPY instead of multiple INSERTs
+* Grouping of multiple statements into a single transaction to reduce commit overhead
+* Use of CLUSTER when retrieving many rows from an index
+* Use of LIMIT for returning a subset of a query's output
+* Use of Prepared queries
+* Use of ANALYZE to maintain accurate optimizer statistics
+* Regular use of VACUUM or pg_autovacuum
+* Dropping of indexes during large data changes
+
+## references
+* https://wiki.postgresql.org/wiki/FAQ
+* http://www.postgresql.org/docs/9.3/static/high-availability.html
+* https://wiki.postgresql.org/wiki/Replication,_Clustering,_and_Connection_Pooling
