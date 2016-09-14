@@ -1,5 +1,13 @@
 # docker
 
+## quick and dirty
+```
+# delete all stopped containers
+docker rm $(docker ps -q -f status=exited)
+
+# delete all dangling (unused) images
+docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+```
 
 ## container ops
 ```
@@ -26,6 +34,9 @@ docker run -d -p 80:80 -p 443:443 --name api --link redis:redis --link postgres:
 
 # see container logs
 docker logs {container_name}
+
+# follow container logs
+docker logs -f {container_name}
 
 # run interactive
 docker run -i -t -p 80:80 -p 443:443 orange/api
