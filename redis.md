@@ -16,8 +16,13 @@ apt-get install -y redis-server
 
 ## redis-cli
 ```
-FLUSHDB   # Delete all keys in current DB
-FLUSHALL  # Nuke everything
+SET key 'value'
+GET key
+EXPIRE key sec  # returns 1 on success, 0 if !exists or failed
+PEXPIRE key ms  
+SAVE            # manual snapshot
+FLUSHDB         # delete all keys in current db
+FLUSHALL        # nuke from orbit
 ```
 
 ## references
