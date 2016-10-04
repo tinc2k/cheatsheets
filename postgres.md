@@ -1,5 +1,6 @@
 # postgres
 
+
 ## snippets
 
 ```
@@ -17,7 +18,37 @@ FROM "User"
 ```
 
 
-## osx Installation
+## operations
+```
+#!bash
+$ createdb dbname
+$ createdb -O usrname dbname #create database with specific owner
+$ dropdb dbname
+$ createuser -s -r postgres #creates postgres user & role
+$ createuser usrname -W #create user and present a password prompt
+$ dropuser usrname
+$ psql dbname #enter console
+    dbname=# \q  #quit console
+    dbname=# \l  #list databases & owners
+    select CURRENT_USER; #who am i
+```
+
+
+## backup, import, export
+```
+#!bash
+#http://www.postgresql.org/docs/9.1/static/backup-dump.html
+pg_dump dbname > outfile
+pg_dump dbname | gzip > filename.gz
+psql dbname < infile #restoring the dump
+psql --set ON_ERROR_STOP=on dbname < infile #if you want to stop on error
+gunzip -c filename.gz | psql dbname #reload from gz
+pg_dump -h host1 dbname | psql -h host2 dbname #dump from server to replicate on another
+pg_dumpall > outfile #dump whole database cluster
+```
+
+
+## osx installation
 
 ```
 brew update
@@ -36,6 +67,7 @@ psql postgres -c 'CREATE EXTENSION "adminpack";')
 ## \q
 ```
 
+
 ## query optimization
 (source: https://wiki.postgresql.org/wiki/FAQ)
 
@@ -48,6 +80,7 @@ psql postgres -c 'CREATE EXTENSION "adminpack";')
 * Use of ANALYZE to maintain accurate optimizer statistics
 * Regular use of VACUUM or pg_autovacuum
 * Dropping of indexes during large data changes
+
 
 ## references
 * https://wiki.postgresql.org/wiki/FAQ
