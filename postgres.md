@@ -15,6 +15,16 @@ SELECT
 FROM "User"
 	LEFT JOIN "Installation" ON "User".id = "Installation"."userId"
 	GROUP BY "User"."id"
+
+
+/* select records with empty or NULL string */
+SELECT * FROM "User" WHERE ("User"."email" = '') IS NOT FALSE;
+
+/* select duplicate emails in User table */
+SELECT "User"."email", COUNT(*)
+  FROM "User"
+  GROUP BY "User"."email"
+  HAVING COUNT(*) > 1;	
 ```
 
 

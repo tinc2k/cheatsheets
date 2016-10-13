@@ -1,5 +1,8 @@
 # MySQL
 
+
+## snippets
+
 ```
 CREATE TABLE Users (
   id bigint NOT NULL AUTO_INCREMENT,
@@ -32,5 +35,11 @@ SELECT Users.id, Users.email, Orders.timestamp, Orders.description
   FROM Orders
   LEFT JOIN Users ON Users.id = Orders.Id
   WHERE 1;
+
+```
+
+## console
+
+```
 
 ```
