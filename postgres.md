@@ -25,7 +25,16 @@ SELECT "User"."email", COUNT(*)
   FROM "User"
   GROUP BY "User"."email"
   HAVING COUNT(*) > 1;	
+
+/* get 5 longest strings */
+SELECT "Workout"."name", char_length("Workout"."name")
+  FROM "Workout"
+  WHERE "Workout"."deletedAt" IS NULL
+  ORDER BY char_length("Workout"."name")DESC
+  LIMIT 5;
+
 ```
+
 
 
 ## operations
