@@ -29,7 +29,6 @@ SELECT "User"."email", COUNT(*)
 /* get 5 longest strings */
 SELECT "Workout"."name", char_length("Workout"."name") as length
   FROM "Workout"
-  WHERE "Workout"."deletedAt" IS NULL
   ORDER BY length DESC
   LIMIT 5;
 ```
