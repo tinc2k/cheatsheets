@@ -8,21 +8,22 @@ Set-ExecutionPolicy Unrestricted
 iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
 
 
-# https://github.com/chocolatey/choco/wiki
+# util
+cinst git.install -y
 cinst 7zip.install -y
+cinst cmder -y
+cinst veracrypt -y
+# TODO automate keeweb
 
+# browser
 cinst googlechrome -y
 cinst firefox -y --force -packageParameters "l=en-US"
 
+# media
 cinst vlc -y
 cinst foobar2000 -y
 cinst itunes -y
 cinst foxitreader -y
-# TODO comicrack
-
-cinst cmder -y
-cinst git.install -y
-cinst atom -y
 
 cinst steam -y
 
@@ -35,12 +36,6 @@ cinst hexchat -y
 cinst skype -y
 
 # -----------------------------------------
-
-# docker?
-
-# cinst keepass.install -y
-# cinst truecrypt -y
-
 
 
 # http://boxstarter.org/WebLauncher
