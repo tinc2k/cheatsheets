@@ -10,6 +10,12 @@ git config --global user.email john@example.com
 git config --global core.editor vim
 git config --global alias.st status
 git config --list
+
+## credential store (windows) - ACHTUNG stored cleartext in home dir
+git config --global credential.helper wincred
+
+## credential store (osx) - ACHTUNG stored cleartext in home dir
+git config --global credential.helper osxkeychain
 ```
 
 
