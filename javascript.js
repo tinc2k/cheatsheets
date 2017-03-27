@@ -2,7 +2,7 @@
 
 
 // return sync/async or throw from promise
-gegetUserByName('nolan').then(function (user) {
+getUserByName('nolan').then(user => {
   if (user.isLoggedOut()) {
     throw new Error('user logged out!'); // throwing a synchronous error
   }

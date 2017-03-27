@@ -8,6 +8,7 @@ SELECT * FROM "User" ORDER BY "User".id DESC
 
 DELETE FROM "User" WHERE "User"."username"='nikola@tesla.com'
 
+/* count Installations by user*/
 SELECT
 	row_number() OVER (ORDER BY "User"."id") AS "#",
 	"User"."username",
