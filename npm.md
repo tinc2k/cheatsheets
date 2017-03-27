@@ -1,5 +1,6 @@
 # npm
 
+
 ```
 # list local or global packages
 npm list [-g]
@@ -11,6 +12,15 @@ npm list {package}
 npm update [-g] {package}
 ```
 
+
+## packages
+
+### sloc
+
+```
+# count lines in current folder, exclude multiple folders from count
+sloc --defails -e ".git|.idea|.vscode|backup|build|certificates|logs|node_modules|static" .
+```
 
 ## refs
 
