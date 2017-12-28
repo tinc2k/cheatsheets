@@ -133,16 +133,21 @@ knex.select('name').from('users')
 
 
 // MIGRATIONS
-// $ knex init
-// $ knex migrate:make migration_name
-// $ knex migrate:latest
-// $ knex migrate:rollback
-// $ knex migrate:currentVersion
+
+```
+$ knex init
+$ knex migrate:make migration_name
+$ knex migrate:latest
+$ knex migrate:rollback
+$ knex migrate:currentVersion
+```
 
 // SEED
-// $ knex seed:make seed_name
-// $ knex seed:run
 
+```
+$ knex seed:make seed_name
+$ knex seed:run
+```
 
 
 
