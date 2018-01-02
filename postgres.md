@@ -4,9 +4,9 @@
 ## snippets
 
 ```
-SELECT * FROM "User" ORDER BY "User".id DESC
+SELECT * FROM "User" ORDER BY "User".id DESC;
 
-DELETE FROM "User" WHERE "User"."username"='nikola@tesla.com'
+DELETE FROM "User" WHERE "User"."username"='nikola@tesla.com';
 
 /* count Installations by user*/
 SELECT
@@ -15,7 +15,7 @@ SELECT
 	COUNT("Installation"."deviceToken") AS "tokens"
 FROM "User"
 	LEFT JOIN "Installation" ON "User".id = "Installation"."userId"
-	GROUP BY "User"."id"
+	GROUP BY "User"."id";
 
 
 /* select records with empty or NULL string */
