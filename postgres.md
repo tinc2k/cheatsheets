@@ -7,8 +7,9 @@
 SELECT * FROM "User" ORDER BY "User".id DESC;
 
 DELETE FROM "User" WHERE "User"."username"='nikola@tesla.com';
+DELETE FROM "Gift" CASCADE WHERE "Gift"."userId"=112;
 
-/* count Installations by user*/
+-- count Installations by user
 SELECT
 	row_number() OVER (ORDER BY "User"."id") AS "#",
 	"User"."username",
@@ -17,17 +18,16 @@ FROM "User"
 	LEFT JOIN "Installation" ON "User".id = "Installation"."userId"
 	GROUP BY "User"."id";
 
-
-/* select records with empty or NULL string */
+-- select records with empty or NULL string
 SELECT * FROM "User" WHERE ("User"."email" = '') IS NOT FALSE;
 
-/* select duplicate emails in User table */
+-- select duplicate emails in User table
 SELECT "User"."email", COUNT(*)
   FROM "User"
   GROUP BY "User"."email"
   HAVING COUNT(*) > 1;	
 
-/* get 5 longest strings */
+-- get 5 longest strings
 SELECT "Workout"."name", char_length("Workout"."name") as length
   FROM "Workout"
   ORDER BY length DESC
