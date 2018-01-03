@@ -1,19 +1,25 @@
 # postgres
 
-
-## snippets
+## queries
 
 ```
+-- simple query
 SELECT * FROM "User" ORDER BY "User".id DESC;
+
+-- concantenate attributes
+SELECT
+  "User".id,
+  concat("User"."firstName", ' ', "User"."lastName") AS "name"
+FROM "User";
 
 -- count Installations by user
 SELECT
-	row_number() OVER (ORDER BY "User"."id") AS "#",
-	"User"."username",
-	COUNT("Installation"."deviceToken") AS "tokens"
+  row_number() OVER (ORDER BY "User"."id") AS "#",
+  "User"."username",
+  COUNT("Installation"."deviceToken") AS "tokens"
 FROM "User"
-	LEFT JOIN "Installation" ON "User".id = "Installation"."userId"
-	GROUP BY "User"."id";
+  LEFT JOIN "Installation" ON "User".id = "Installation"."userId"
+  GROUP BY "User"."id";
 
 -- select records with empty or NULL string
 SELECT * FROM "User" WHERE ("User"."email" = '') IS NOT FALSE;
@@ -22,7 +28,7 @@ SELECT * FROM "User" WHERE ("User"."email" = '') IS NOT FALSE;
 SELECT "User"."email", COUNT(*)
   FROM "User"
   GROUP BY "User"."email"
-  HAVING COUNT(*) > 1;	
+  HAVING COUNT(*) > 1;
 
 -- get 5 longest strings
 SELECT "Workout"."name", char_length("Workout"."name") as length
@@ -31,11 +37,19 @@ SELECT "Workout"."name", char_length("Workout"."name") as length
   LIMIT 5;
 ```
 
+## update
+
+```
+-- update attribute value on all records
+UPDATE "Installation" SET "deviceToken"='';
+```
+
 ## delete
 
 ```
 -- delete records by attribute value
 DELETE FROM "User" WHERE "User"."username"='nikola@tesla.com';
+
 -- delete child records based on parent's attribute value
 DELETE FROM "ReceiptItem" WHERE "ReceiptItem"."receiptId" IN (
   SELECT "Receipt".id
@@ -45,6 +59,7 @@ DELETE FROM "ReceiptItem" WHERE "ReceiptItem"."receiptId" IN (
 ```
 
 ## operations
+
 ```
 #!bash
 $ createdb dbname
@@ -54,13 +69,14 @@ $ createuser -s -r postgres #creates postgres user & role
 $ createuser usrname -W #create user and present a password prompt
 $ dropuser usrname
 $ psql dbname #enter console
-    dbname=# \q  #quit console
-    dbname=# \l  #list databases & owners
-    select CURRENT_USER; #who am i
+  dbname=# \q  #quit console
+  dbname=# \l  #list databases & owners
+  select CURRENT_USER; #who am i
 ```
 
 
 ## backup, import, export
+
 ```
 #!bash
 #http://www.postgresql.org/docs/9.1/static/backup-dump.html
@@ -95,6 +111,7 @@ psql postgres -c 'CREATE EXTENSION "adminpack";')
 
 
 ## query optimization
+
 (source: https://wiki.postgresql.org/wiki/FAQ)
 
 * Creation of indexes, including expression and partial indexes
@@ -109,6 +126,7 @@ psql postgres -c 'CREATE EXTENSION "adminpack";')
 
 
 ## references
+
 * https://wiki.postgresql.org/wiki/FAQ
 * http://www.postgresql.org/docs/9.3/static/high-availability.html
 * https://wiki.postgresql.org/wiki/Replication,_Clustering,_and_Connection_Pooling
