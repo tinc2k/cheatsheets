@@ -6,9 +6,6 @@
 ```
 SELECT * FROM "User" ORDER BY "User".id DESC;
 
-DELETE FROM "User" WHERE "User"."username"='nikola@tesla.com';
-DELETE FROM "Gift" CASCADE WHERE "Gift"."userId"=112;
-
 -- count Installations by user
 SELECT
 	row_number() OVER (ORDER BY "User"."id") AS "#",
@@ -34,7 +31,18 @@ SELECT "Workout"."name", char_length("Workout"."name") as length
   LIMIT 5;
 ```
 
+## delete
 
+```
+-- delete records by attribute value
+DELETE FROM "User" WHERE "User"."username"='nikola@tesla.com';
+-- delete child records based on parent's attribute value
+DELETE FROM "ReceiptItem" WHERE "ReceiptItem"."receiptId" IN (
+  SELECT "Receipt".id
+  FROM "Receipt"
+  WHERE "Receipt"."userId"=112
+);
+```
 
 ## operations
 ```
