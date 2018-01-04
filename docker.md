@@ -2,11 +2,11 @@
 
 ## quick and dirty
 ```
-# delete all stopped containers
-docker rm $(docker ps -q -f status=exited)
+# delete all stopped containers (errors printed for running)
+docker ps -aq --no-trunc | xargs docker rm
 
-# delete all dangling (unused) images
-docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+# delete all dangling/untagged images
+docker images -q --filter dangling=true | xargs docker rmi
 ```
 
 ## container ops
