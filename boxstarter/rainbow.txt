@@ -1,0 +1,20 @@
+## quick dirty windows boxstarter
+
+cinst google-chrome-x64 -y
+cinst firefox -y -packageParameters "l=en-US"
+cinst winrar -y
+cinst skype -y
+cinst uTorrent -y
+cinst FoxitReader -y
+cinst calibre -y
+
+cinst git -y
+## don't forget to run redis as admin first to create the config file & database
+cinst redis-64 -y
+cinst cloudberryexplorer.s3 -y
+
+npm install eslint nodemon stylus -g
+
+cmder
+postgres
+
