@@ -5,8 +5,7 @@
 
 * chrome://flags/
 * chrome://settings/
-* chrome://net-internals/#dns
-* chrome://downloads/
+* chrome://about/
 
 ## shortcuts
 
@@ -23,8 +22,12 @@
 ### chrome
 
 `Ctrl` `F` Find
+
 `Ctrl` `G` Jump to the next match
+
 `Ctrl` `Shift` `G` Jump to  previous match
+
+`Ctrl` `Shift` `O` Bookmark Manager
 
 `Ctrl` `9` Goto last tab
 
@@ -40,4 +43,5 @@
 ```
 // disable right click hijack (chrome, firefox)
 document.oncontextmenu=null;
+document.onselectstart=null;
 ```
