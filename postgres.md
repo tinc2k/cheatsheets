@@ -12,10 +12,10 @@ SELECT
   concat("User"."firstName", ' ', "User"."lastName") AS "name"
 FROM "User";
 
--- count Installations by User
+-- count associated Installations to each User
 SELECT
   row_number() OVER (ORDER BY "User"."id") AS "#",
-  "User"."username",
+  "User"."name",
   COUNT("Installation"."id") AS "installations"
 FROM "User"
   LEFT JOIN "Installation" ON "User".id = "Installation"."userId"
@@ -24,7 +24,7 @@ FROM "User"
 -- select records with empty or NULL string
 SELECT * FROM "User" WHERE ("User"."email" = '') IS NOT FALSE;
 
--- select duplicate emails in User table
+-- check for duplicate emails in User table
 SELECT "User"."email", COUNT(*)
   FROM "User"
   GROUP BY "User"."email"
