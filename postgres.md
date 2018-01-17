@@ -30,6 +30,13 @@ SELECT "User"."email", COUNT(*)
   GROUP BY "User"."email"
   HAVING COUNT(*) > 1;
 
+-- select unique Users from all Subscriptions to id=1
+SELECT DISTINCT "User".*
+FROM "User"
+  INNER JOIN "Subscription" ON "Subscription"."userId"="User".id
+WHERE "Subscription"."influencerId"=1
+ORDER BY "User".id;
+
 -- get 5 longest strings
 SELECT "Workout"."name", char_length("Workout"."name") as length
   FROM "Workout"
