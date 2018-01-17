@@ -12,11 +12,11 @@ SELECT
   concat("User"."firstName", ' ', "User"."lastName") AS "name"
 FROM "User";
 
--- count Installations by user
+-- count Installations by User
 SELECT
   row_number() OVER (ORDER BY "User"."id") AS "#",
   "User"."username",
-  COUNT("Installation"."deviceToken") AS "tokens"
+  COUNT("Installation"."id") AS "installations"
 FROM "User"
   LEFT JOIN "Installation" ON "User".id = "Installation"."userId"
   GROUP BY "User"."id";
