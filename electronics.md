@@ -1,8 +1,8 @@
-# electronics
+# Electronics
 
-## connectors
+## Connectors
 
-#### xlr pinout
+### XLR pinout
 
 * 1 neutral / housing
 * 2 hot / positive phase
@@ -17,7 +17,9 @@
      = = =
 ```
 
-## guitar wiring
+## Guitar wiring
+
+### Pickup orientation
 
 ```
   +-------------------------+
@@ -28,20 +30,23 @@
   +-------------------------+
 ```
 
-#### seymour duncan color codes
-* black: north start (hot output)
-* white: north finish
-* red: south finish (to white for standard humbucker)
-* green: south start (ground bare/shield)
+### Seymour Duncan color codes
 
-#### dimarzio color codes
-* red: north start (hot output)
-* black: north finish
-* white: south finish (to white for standard humbucker)
-* green: south start (ground bare/shield)
+* **black:** North start (hot output)
+* **white:** North finish
+* **red:** South finish (to white for standard humbucker)
+* **green:** South start (ground bare/shield)
 
-#### gibson color codes
-* red: north/slug start (hot output)
-* white: north finish
-* green: south finish (to white for standard humbucker)
-* black: south start (ground bare/shield)
+### DiMarzio color codes
+
+* **red:** North start (hot output)
+* **black:** North finish
+* **white:** South finish (to white for standard humbucker)
+* **green:** South start (ground bare/shield)
+
+### Gibson color codes
+
+* **red:** North start (hot output)
+* **white:** North finish
+* **green:** South finish (to white for standard humbucker)
+* **black:** South start (ground bare/shield)
