@@ -6,6 +6,9 @@
 -- simple query
 SELECT * FROM "User" ORDER BY "User".id DESC;
 
+-- simple update
+UPDATE "User" SET "campaignWelcome" = 2 WHERE "User".id = 112;
+
 -- concantenate attributes
 SELECT
   "User".id,
