@@ -1,13 +1,10 @@
 # postgres
 
-## queries
+## select
 
 ```
 -- simple query
 SELECT * FROM "User" ORDER BY "User".id DESC;
-
--- simple update
-UPDATE "User" SET "campaignWelcome" = 2 WHERE "User".id = 112;
 
 -- concantenate attributes
 SELECT
@@ -52,6 +49,8 @@ SELECT "Workout"."name", char_length("Workout"."name") as length
 ```
 -- update attribute value on all records
 UPDATE "Installation" SET "deviceToken"='';
+
+UPDATE "User" SET "campaignWelcome" = 2 WHERE "User".id = 112;
 ```
 
 ## delete
