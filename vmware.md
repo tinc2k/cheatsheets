@@ -8,3 +8,8 @@ apt-get update
 apt-get install open-vm-tools
 apt-get install open-vm-tools-desktop
 ```
+
+## refs
+
+* http://partnerweb.vmware.com/GOSIG/Debian_9.html#Tools
+* https://kb.vmware.com/s/article/2073803
