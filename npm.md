@@ -10,6 +10,12 @@ npm list {package}
 
 # update package
 npm update [-g] {package}
+
+# update npm
+npm install npm@latest -g
+
+# check installed npm version
+npm -v
 ```
 
 
