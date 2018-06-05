@@ -1,13 +1,14 @@
 # docker
 
 ## quick and dirty
+
 ```
 # remove unused images
 docker image prune
-
 ```
 
 ## container ops
+
 ```
 # list compiled images
 docker images
@@ -43,11 +44,10 @@ docker run -i -t -p 80:80 -p 443:443 orange/api
 docker exec -i -t api bash
 docker exec postgres pg_dump orange > here.sql
 docker cp api:/orange/logs /home/logs/
-
 ```
 
-
 ## docker-machine
+
 ```
 # see host machine IP (development environment only)
 docker-machine ls
@@ -55,7 +55,6 @@ docker-machine ls
 # upgrade
 docker-machine upgrade default
 ```
-
 
 ## refs
 https://docs.docker.com/engine/installation/windows/

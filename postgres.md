@@ -12,6 +12,14 @@ SELECT
   concat("User"."firstName", ' ', "User"."lastName") AS "name"
 FROM "User";
 
+-- count number of Post records by Post.type value
+SELECT
+  "Post".type,
+  COUNT("Post".id) as "count"
+FROM "Post"
+  GROUP BY "Post".type
+  ORDER BY "Post".type;
+
 -- count associated Installations to each User
 SELECT
   row_number() OVER (ORDER BY "User"."id") AS "#",
