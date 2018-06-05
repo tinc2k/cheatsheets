@@ -324,6 +324,9 @@ git diff filename
 # diff current staged file against last commited
 git diff --cached
 
+# diff branches
+git diff branch1..branch2
+
 # gives a list of branches with a * next to your branch
 git branch
 
