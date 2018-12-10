@@ -1,6 +1,15 @@
 // javascript
 
 
+// console.log
+console.log(object, otherObject, string);
+console.log('I like %s but I do not like %s.', 'Skittles', 'pus');
+console.warn();
+console.table([{}, {}, {}]);
+console.trace();
+console.time();
+console.timeEnd();
+
 // return sync/async or throw from promise
 getUserByName('nolan').then(user => {
   if (user.isLoggedOut()) {
