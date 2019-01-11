@@ -52,6 +52,13 @@ SELECT "Workout"."name", char_length("Workout"."name") as length
   LIMIT 5;
 ```
 
+## insert
+
+```
+INSERT INTO books (id, title, author_id, subject_id)
+  VALUES (41472, 'Practical PostgreSQL', 1212, 4);
+```
+
 ## update
 
 ```
