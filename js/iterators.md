@@ -21,6 +21,8 @@
 ## References
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield*
