@@ -4,6 +4,7 @@
 ```
 # list local or global packages
 npm list [-g]
+npm list -g --depth=0
 
 # list single package w/ dependency tree
 npm list {package}
