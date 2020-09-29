@@ -46,6 +46,11 @@ cinst skype -y
 #TODO keepass/keeweb
 ```
 
+## terminal
+
+* https://docs.microsoft.com/en-us/windows/terminal/customize-settings/profile-settings
+* https://docs.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes
+
 ## refs 
 
 * http://boxstarter.org/WebLauncher
