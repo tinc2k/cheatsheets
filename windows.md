@@ -2,13 +2,15 @@
 
 ## shortcuts
 
+`❖` `.` Emoji
+
 `❖` `Tab` Task View
 
-`Ctrl` `❖` `D` New desktop
+`Ctrl` `❖` `D` New virtual desktop
 
-`Ctrl` `❖` `←/→` Switch desktop
+`Ctrl` `❖` `←/→` Switch virtual desktop
 
-`Ctrl` `❖` `F4` New desktop
+`Ctrl` `❖` `F4` Close current virtual desktop
 
 ## quick windows box installer
 
